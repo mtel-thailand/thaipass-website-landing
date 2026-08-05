@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
 import { AppStoreButton, GooglePlayButton } from "@/components/StoreButton";
+import { Reveal } from "@/components/Reveal";
 
 export function Cta() {
   const { language } = useLanguage();
@@ -24,7 +25,7 @@ export function Cta() {
         </div>
 
         <div className="relative z-10 px-6 py-10 sm:px-10 sm:py-12 md:px-16 md:py-16">
-          <div className="flex max-w-[543px] flex-col items-start gap-8">
+          <Reveal className="flex max-w-[543px] flex-col items-start gap-8">
             <div className="flex flex-col gap-2 text-white">
               <h2 className="font-serif text-[28px] font-semibold leading-[1.5] sm:text-[32px]">
                 <span className="block">{line1}</span>
@@ -41,7 +42,7 @@ export function Cta() {
               <AppStoreButton />
               <GooglePlayButton />
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "motion/react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
+import { Reveal } from "@/components/Reveal";
 
 export function HowItWorks() {
   const { language } = useLanguage();
@@ -10,7 +12,7 @@ export function HowItWorks() {
 
   return (
     <section id="how-it-works" className="bg-white px-6 py-20 md:px-[118px] md:py-28">
-      <div className="mx-auto flex max-w-[1203px] flex-col items-center gap-4 text-center">
+      <Reveal className="mx-auto flex max-w-[1203px] flex-col items-center gap-4 text-center">
         <span className="w-fit rounded-[100px] bg-navy-100 px-3 py-2 font-sans text-xs font-bold text-navy-700">
           {badge}
         </span>
@@ -22,12 +24,16 @@ export function HowItWorks() {
         </h2>
 
         <p className="max-w-[543px] font-sans text-sm leading-[1.4] text-navy-900">{subcopy}</p>
-      </div>
+      </Reveal>
 
       <div className="mx-auto mt-16 grid max-w-[1203px] grid-cols-1 gap-8 md:grid-cols-3">
-        {cards.map((card) => (
-          <div
+        {cards.map((card, index) => (
+          <motion.div
             key={card.title}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col gap-8 rounded-xl border border-neutral-300 p-4"
           >
             <div className="relative aspect-[1448/1086] w-full overflow-hidden rounded-[15px]">
@@ -63,7 +69,7 @@ export function HowItWorks() {
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

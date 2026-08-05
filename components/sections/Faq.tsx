@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 import { useLanguage, type Language } from "@/lib/language-context";
+import { Reveal } from "@/components/Reveal";
 
 type FaqItem = { q: string; a: string; link?: string };
 type FaqCategory = { category: string; faqs: FaqItem[] };
@@ -242,18 +244,24 @@ export function Faq() {
 
   return (
     <section id="faq" className="bg-white px-6 py-20 md:px-[118px] md:py-28">
-      <div className="mx-auto flex max-w-[1203px] flex-col items-center gap-4 text-center">
+      <Reveal className="mx-auto flex max-w-[1203px] flex-col items-center gap-4 text-center">
         <span className="w-fit rounded-[100px] bg-navy-100 px-3 py-2 font-sans text-xs font-bold text-navy-700">
           {heading.badge}
         </span>
         <h2 className="font-serif text-[32px] font-semibold leading-[1.1] text-navy-900 sm:text-[40px]">
           {heading.title}
         </h2>
-      </div>
+      </Reveal>
 
       <div className="mx-auto mt-16 flex max-w-[1203px] flex-col gap-10">
         {categories.map((group, groupIndex) => (
-          <div key={group.category}>
+          <motion.div
+            key={group.category}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, delay: Math.min(groupIndex, 3) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+          >
             <h3 className="mb-4 font-sans text-sm font-bold tracking-wide text-navy-700 uppercase">
               {group.category}
             </h3>
@@ -307,7 +315,7 @@ export function Faq() {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

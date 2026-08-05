@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
+import { Reveal } from "@/components/Reveal";
 
 export function Footer() {
   const { language } = useLanguage();
@@ -11,7 +12,10 @@ export function Footer() {
 
   return (
     <footer className="bg-navy-950 px-6 py-12 md:px-[70px] md:py-[49px]">
-      <div className="mx-auto flex max-w-[1300px] flex-col gap-10 md:flex-row md:items-start md:justify-between">
+      <Reveal
+        transition={{ duration: 0.5 }}
+        className="mx-auto flex max-w-[1300px] flex-col gap-10 md:flex-row md:items-start md:justify-between"
+      >
         <div className="flex flex-col gap-6">
           <div>
             <Link href="/" aria-label="ThaiPass home">
@@ -42,7 +46,7 @@ export function Footer() {
             {refund}
           </Link>
         </nav>
-      </div>
+      </Reveal>
     </footer>
   );
 }
