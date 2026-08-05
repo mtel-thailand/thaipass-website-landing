@@ -55,24 +55,33 @@ export const content = {
     },
     whyThaiPass: {
       badge: "Why you'll love ThaiPass",
-      headline: "Travel with peace of mind",
+      headline: {
+        prefix: "Travel with ",
+        highlight: "peace of mind",
+      },
+      subcopy:
+        "From planning to arrival and beyond, ThaiPass is your all-in-one companion that makes every step easier.",
       items: [
         {
+          image: "/whythaipass_01.png",
           icon: "/icons/shield-check.svg",
           title: "Trusted & Official",
           description: "Accurate, up-to-date information you can rely on.",
         },
         {
+          image: "/whythaipass_02.png",
           icon: "/icons/clock.svg",
           title: "Save Time & Avoid Mistakes",
           description: "We help you get it right, from the start.",
         },
         {
+          image: "/whythaipass_03.png",
           icon: "/icons/phone.svg",
           title: "All-in-One Convenience",
           description: "Everything you need in one smart companion.",
         },
         {
+          image: "/whythaipass_04.png",
           icon: "/icons/heart.svg",
           title: "Made for Travelers Like You",
           description: "Built with real travelers needs in mind.",
@@ -150,24 +159,33 @@ export const content = {
     },
     whyThaiPass: {
       badge: "เหตุผลที่คุณจะรัก ThaiPass",
-      headline: "เดินทางอย่างสบายใจ",
+      headline: {
+        prefix: "เดินทางอย่าง",
+        highlight: "สบายใจ",
+      },
+      subcopy:
+        "ตั้งแต่การวางแผนไปจนถึงการเดินทางมาถึงและหลังจากนั้น ThaiPass คือเพื่อนคู่ใจที่ครบครันซึ่งทำให้ทุกขั้นตอนง่ายขึ้น",
       items: [
         {
+          image: "/whythaipass_01.png",
           icon: "/icons/shield-check.svg",
           title: "เชื่อถือได้และเป็นทางการ",
           description: "ข้อมูลที่ถูกต้องและทันสมัยที่คุณไว้วางใจได้",
         },
         {
+          image: "/whythaipass_02.png",
           icon: "/icons/clock.svg",
           title: "ประหยัดเวลาและหลีกเลี่ยงข้อผิดพลาด",
           description: "เราช่วยให้คุณทำถูกต้องตั้งแต่เริ่มต้น",
         },
         {
+          image: "/whythaipass_03.png",
           icon: "/icons/phone.svg",
           title: "ความสะดวกสบายครบในที่เดียว",
           description: "ทุกสิ่งที่คุณต้องการในเพื่อนคู่ใจอัจฉริยะเดียว",
         },
         {
+          image: "/whythaipass_04.png",
           icon: "/icons/heart.svg",
           title: "สร้างขึ้นเพื่อนักเดินทางแบบคุณ",
           description: "สร้างขึ้นโดยคำนึงถึงความต้องการของนักเดินทางจริง",

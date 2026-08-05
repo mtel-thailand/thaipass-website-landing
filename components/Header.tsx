@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
 import { LanguageToggle } from "./LanguageToggle";
@@ -12,16 +13,27 @@ export function Header() {
   const { nav, download } = content[language].header;
   const pathname = usePathname();
   const homePrefix = pathname === "/" ? "" : "/";
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navItems = [
-    { label: nav.features, href: `${homePrefix}#features` },
     { label: nav.howItWorks, href: `${homePrefix}#how-it-works` },
     { label: nav.whyThaiPass, href: `${homePrefix}#why-thaipass` },
     { label: nav.faq, href: `${homePrefix}#faq` },
   ];
 
   return (
-    <header className="relative z-20 flex w-full items-center justify-between gap-6 px-6 py-8 md:px-[98px]">
+    <header
+      className={`fixed inset-x-0 top-0 z-20 flex w-full items-center justify-between gap-6 px-6 py-[22px] transition-colors duration-200 md:px-[98px] ${
+        scrolled ? "bg-white/90 backdrop-blur-sm" : "bg-transparent"
+      }`}
+    >
       <Link href="/" aria-label="ThaiPass home" className="shrink-0">
         <Image src="/logo.svg" alt="ThaiPass" width={158} height={39} priority />
       </Link>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
 import { AppStoreButton, GooglePlayButton } from "./StoreButton";
@@ -10,17 +9,20 @@ export function Hero() {
   const { badge, headline, subcopy } = content[language].hero;
 
   return (
-    <section className="relative w-full overflow-hidden bg-white">
-      <div className="absolute inset-0">
-        <Image
-          src="/hero-bg.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[80%_100%]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-white from-15% via-white/70 via-45% to-transparent to-80%" />
+    <section className="relative w-full overflow-hidden bg-[#FFFEFE]">
+      <div className="absolute inset-y-0 right-0 w-[60vw] overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/hero-bg.png"
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-cover object-[80%_100%]"
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFFEFE] from-5% via-[#FFFEFE]/60 via-20% to-transparent to-40%" />
       </div>
 
       <div className="relative z-10 w-full px-6 py-20 sm:px-10 md:py-28 md:pr-6 md:pl-[118px] lg:py-[201px]">

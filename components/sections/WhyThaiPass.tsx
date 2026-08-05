@@ -6,48 +6,67 @@ import { content } from "@/lib/content";
 
 export function WhyThaiPass() {
   const { language } = useLanguage();
-  const { badge, headline, items } = content[language].whyThaiPass;
+  const { badge, headline, subcopy, items } = content[language].whyThaiPass;
 
   return (
-    <section id="why-thaipass" className="bg-white px-6 py-20 md:px-[118px] md:py-28">
-      <div className="mx-auto flex max-w-[1203px] flex-col gap-[59px] rounded-3xl bg-navy-100 px-6 pt-10 pb-[50px] md:px-[60px]">
-        <div className="mx-auto flex max-w-[543px] flex-col items-center gap-[13px] text-center">
-          <span className="w-fit rounded-[100px] bg-navy-200 px-3 py-2 font-sans text-xs font-bold text-navy-700">
-            {badge}
-          </span>
-          <h2 className="font-serif text-[32px] font-semibold leading-[1.1] text-neutral-900 sm:text-[40px]">
-            {headline}
-          </h2>
-        </div>
+    <section
+      id="why-thaipass"
+      className="bg-gradient-to-b from-navy-100 to-white px-6 py-20 md:px-[118px] md:py-28"
+    >
+      <div className="mx-auto flex max-w-[700px] flex-col items-center gap-4 text-center">
+        <span className="w-fit rounded-[100px] bg-navy-200 px-3 py-2 font-sans text-xs font-bold text-navy-700">
+          {badge}
+        </span>
+        <h2 className="font-serif text-[32px] font-semibold leading-[1.1] text-navy-900 sm:text-[40px]">
+          {headline.prefix}
+          <span className="text-accent">{headline.highlight}</span>
+        </h2>
+        <p className="font-sans text-base leading-[1.4] text-navy-700">{subcopy}</p>
+      </div>
 
-        <div className="flex flex-col items-center gap-10 md:flex-row md:items-stretch md:justify-center">
-          {items.map((item, index) => (
-            <div key={item.title} className="flex items-stretch">
-              {index > 0 && (
-                <div className="mr-10 hidden w-px shrink-0 bg-navy-200 md:block" aria-hidden />
-              )}
-              <div className="flex w-[221px] flex-col items-center gap-6 text-center">
-                <div className="flex h-11 w-11 items-center justify-center">
+      <div className="mx-auto mt-16 flex max-w-[1300px] flex-col items-stretch gap-8 lg:flex-row lg:items-center lg:gap-0">
+        {items.map((item, index) => (
+          <div key={item.title} className="flex items-center lg:flex-1">
+            <div className="flex w-full flex-col overflow-hidden rounded-[28px] bg-white shadow-[0_10px_30px_rgba(20,40,80,0.08)]">
+              <div className="relative h-[200px] w-full shrink-0">
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="relative flex flex-col items-center gap-3 px-6 pt-10 pb-8 text-center">
+                <div className="absolute -top-8 flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-[0_6px_16px_rgba(20,40,80,0.15)]">
                   {item.icon === "/icons/phone.svg" ? (
-                    <Image
-                      src={item.icon}
-                      alt=""
-                      width={25}
-                      height={36}
-                      className="h-9 w-[25px]"
-                    />
+                    <Image src={item.icon} alt="" width={18} height={26} className="h-[26px] w-[18px]" />
                   ) : (
-                    <Image src={item.icon} alt="" width={44} height={44} className="h-11 w-11" />
+                    <Image src={item.icon} alt="" width={28} height={28} className="h-7 w-7" />
                   )}
                 </div>
-                <div className="flex flex-col gap-3 text-navy-700">
-                  <h3 className="font-sans text-2xl font-semibold leading-[1.1]">{item.title}</h3>
-                  <p className="font-sans text-base leading-[1.4]">{item.description}</p>
-                </div>
+                <h3 className="font-serif text-xl font-bold text-navy-900">{item.title}</h3>
+                <span className="h-[3px] w-6 rounded-full bg-accent" aria-hidden />
+                <p className="font-sans text-sm leading-[1.4] text-navy-700">{item.description}</p>
               </div>
             </div>
-          ))}
-        </div>
+
+            {index < items.length - 1 && (
+              <div className="hidden shrink-0 items-center justify-center px-2 lg:flex" aria-hidden>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-[0_4px_10px_rgba(20,40,80,0.1)]">
+                  <Image
+                    src="/icons/chevron-down.svg"
+                    alt=""
+                    width={12}
+                    height={7}
+                    className="h-[7px] w-3 -rotate-90"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

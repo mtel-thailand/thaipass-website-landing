@@ -10,7 +10,10 @@ export function Cta() {
   const { line1, headline, subcopy } = content[language].cta;
 
   return (
-    <section id="cta" className="relative w-full overflow-hidden bg-white px-6 py-10 md:px-[99px] md:py-10">
+    <section
+      id="cta"
+      className="relative w-full overflow-hidden bg-white px-6 pt-10 pb-20 md:px-[99px] md:pt-10 md:pb-28"
+    >
       <div className="absolute inset-0">
         <Image src="/cta-bg.png" alt="" fill sizes="100vw" className="object-cover" />
       </div>
