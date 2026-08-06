@@ -33,17 +33,15 @@ export function Hero() {
   return (
     <section ref={sectionRef} className="relative w-full overflow-hidden bg-[#FFFEFE]">
       <div className="absolute inset-y-0 right-0 w-[60vw] overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/hero-bg.png"
+        <Image
+          src="/hero-bg 2.png"
+          alt=""
+          fill
+          sizes="60vw"
           aria-hidden
-          className="absolute inset-0 h-full w-full object-cover object-[80%_100%]"
-        >
-          <source src="/hero-bg.mp4" type="video/mp4" />
-        </video>
+          priority
+          className="object-cover object-[80%_100%]"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-[#FFFEFE] from-5% via-[#FFFEFE]/60 via-20% to-transparent to-40%" />
 
         <motion.div
