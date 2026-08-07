@@ -20,10 +20,10 @@ export function LanguageToggle() {
         onClick={() => setOpen((value) => !value)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex h-10 w-24 items-center justify-center gap-[5px] rounded-lg bg-white"
+        className="flex h-9 w-auto items-center justify-center gap-[5px] rounded-lg bg-transparent px-2 sm:h-10 sm:w-24 sm:px-0"
       >
         <Image src="/icons/globe.svg" alt="" width={13} height={13} className="h-[13px] w-[13px]" />
-        <span className="font-manrope text-base text-navy-700">
+        <span className="font-manrope text-sm text-navy-700 sm:text-base">
           {language.toUpperCase()}
         </span>
         <Image
@@ -38,7 +38,7 @@ export function LanguageToggle() {
       {open && (
         <ul
           role="listbox"
-          className="absolute top-[calc(100%+4px)] left-0 z-10 w-24 overflow-hidden rounded-lg bg-white shadow-lg"
+          className="absolute top-[calc(100%+4px)] left-0 z-10 w-full min-w-[72px] overflow-hidden rounded-lg bg-white shadow-lg sm:w-24"
         >
           {LANGUAGES.map(({ code, label }) => (
             <li key={code}>

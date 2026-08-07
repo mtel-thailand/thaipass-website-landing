@@ -11,7 +11,7 @@ export function HowItWorks() {
   const { badge, headline, subcopy, cards } = content[language].howItWorks;
 
   return (
-    <section id="how-it-works" className="bg-white px-6 py-20 md:px-[118px] md:py-28">
+    <section id="how-it-works" className="bg-white px-6 py-20 md:px-10 xl:px-[118px] md:py-28">
       <Reveal className="mx-auto flex max-w-[1203px] flex-col items-center gap-4 text-center">
         <span className="w-fit rounded-[100px] bg-navy-100 px-3 py-2 font-sans text-xs font-bold text-navy-700">
           {badge}
@@ -48,7 +48,7 @@ export function HowItWorks() {
 
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-[13px] text-neutral-800">
-                <h3 className="font-serif text-[28px] font-bold leading-[1.1]">{card.title}</h3>
+                <h3 className="font-serif text-[22px] font-bold leading-[1.1] break-words lg:text-[28px]">{card.title}</h3>
                 <p className="font-sans text-base leading-[1.4]">{card.description}</p>
               </div>
 

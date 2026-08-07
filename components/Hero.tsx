@@ -32,17 +32,18 @@ export function Hero() {
 
   return (
     <section ref={sectionRef} className="relative w-full overflow-hidden bg-[#FFFEFE]">
-      <div className="absolute inset-y-0 right-0 w-[60vw] overflow-hidden">
+      <div className="relative h-[360px] w-full overflow-hidden sm:h-[440px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-auto lg:w-[60vw]">
         <Image
           src="/hero-bg 2.png"
           alt=""
           fill
-          sizes="60vw"
+          sizes="(min-width: 1024px) 60vw, 225vw"
           aria-hidden
           priority
-          className="object-cover object-[80%_100%]"
+          className="origin-[100%_22%] scale-[1.173] object-cover object-[83%_100%] lg:origin-center lg:scale-100 lg:object-[80%_100%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FFFEFE] from-5% via-[#FFFEFE]/60 via-20% to-transparent to-40%" />
+        <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#FFFEFE] to-transparent lg:hidden" />
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-[#FFFEFE] from-5% via-[#FFFEFE]/60 via-20% to-transparent to-40% lg:block" />
 
         <motion.div
           style={{ y: phoneY, rotate: phoneRotate }}
@@ -65,7 +66,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 w-full px-6 py-20 sm:px-10 md:py-28 md:pr-6 lg:mx-auto lg:max-w-[1200px] lg:px-0 lg:py-[201px]">
+      <div className="relative z-10 -mt-[30px] w-full px-6 pb-16 sm:px-10 sm:pb-20 lg:mx-auto lg:mt-0 lg:max-w-[1200px] lg:px-0 lg:pt-[201px] lg:pb-[201px]">
         <motion.div
           initial="hidden"
           animate="visible"

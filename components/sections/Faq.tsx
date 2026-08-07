@@ -243,7 +243,7 @@ export function Faq() {
   const heading = HEADING[language];
 
   return (
-    <section id="faq" className="bg-white px-6 py-20 md:px-[118px] md:py-28">
+    <section id="faq" className="bg-white px-6 py-20 md:px-10 xl:px-[118px] md:py-28">
       <Reveal className="mx-auto flex max-w-[1203px] flex-col items-center gap-4 text-center">
         <span className="w-fit rounded-[100px] bg-navy-100 px-3 py-2 font-sans text-xs font-bold text-navy-700">
           {heading.badge}
