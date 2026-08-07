@@ -66,7 +66,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 -mt-[30px] w-full px-6 pb-16 sm:px-10 sm:pb-20 lg:mx-auto lg:mt-0 lg:max-w-[1200px] lg:px-0 lg:pt-[201px] lg:pb-[201px]">
+      <div className="relative z-10 -mt-[30px] w-full px-6 pb-16 sm:px-10 sm:pb-20 lg:mx-auto lg:mt-0 lg:max-w-[1280px] lg:px-10 lg:pt-[201px] lg:pb-[201px]">
         <motion.div
           initial="hidden"
           animate="visible"

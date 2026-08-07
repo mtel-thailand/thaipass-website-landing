@@ -10,7 +10,7 @@ import { LanguageToggle } from "./LanguageToggle";
 
 export function Header() {
   const { language } = useLanguage();
-  const { nav, download } = content[language].header;
+  const { nav } = content[language].header;
   const pathname = usePathname();
   const homePrefix = pathname === "/" ? "" : "/";
   const [scrolled, setScrolled] = useState(false);
@@ -44,7 +44,7 @@ export function Header() {
         scrolled || menuOpen ? "bg-white/90 backdrop-blur-sm" : "bg-transparent"
       }`}
     >
-      <Link href="/" aria-label="ThaiPass home" className="shrink-0">
+      <Link href="/" aria-label="ThaiPass home" className="shrink-0 lg:flex-1">
         <Image
           src="/Logo-emblem.svg"
           alt="ThaiPass"
@@ -75,14 +75,8 @@ export function Header() {
         ))}
       </nav>
 
-      <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+      <div className="flex shrink-0 items-center gap-2 sm:gap-3 lg:flex-1 lg:justify-end">
         <LanguageToggle />
-        <button
-          type="button"
-          className="rounded-lg bg-navy-700 px-2 py-2 text-sm whitespace-nowrap text-white sm:px-[10px] sm:py-[10px] sm:text-base"
-        >
-          {download}
-        </button>
         <button
           type="button"
           onClick={() => setMenuOpen((value) => !value)}
