@@ -3,12 +3,13 @@
 import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
-import { AppStoreButton, GooglePlayButton } from "@/components/StoreButton";
+import { DownloadButton } from "@/components/DownloadButton";
 import { Reveal } from "@/components/Reveal";
 
 export function Cta() {
   const { language } = useLanguage();
   const { line1, headline, subcopy } = content[language].cta;
+  const { download } = content[language].header;
 
   return (
     <section
@@ -39,8 +40,7 @@ export function Cta() {
             </div>
 
             <div className="flex flex-wrap items-center gap-[18px]">
-              <AppStoreButton />
-              <GooglePlayButton />
+              <DownloadButton label={download} />
             </div>
           </Reveal>
         </div>

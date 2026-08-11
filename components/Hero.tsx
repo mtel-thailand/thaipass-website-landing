@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, type Variants } from "motion/react";
 import { useRef } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { content } from "@/lib/content";
-import { AppStoreButton, GooglePlayButton } from "./StoreButton";
+import { DownloadButton } from "./DownloadButton";
 
 const container: Variants = {
   hidden: {},
@@ -20,6 +20,7 @@ const item: Variants = {
 export function Hero() {
   const { language } = useLanguage();
   const { badge, headline, subcopy } = content[language].hero;
+  const { download } = content[language].header;
   const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -97,8 +98,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap items-center gap-[18px] pt-4">
-            <AppStoreButton />
-            <GooglePlayButton />
+            <DownloadButton label={download} />
           </motion.div>
         </motion.div>
       </div>

@@ -1,9 +1,13 @@
 import Image from "next/image";
 
-export function AppStoreButton() {
+type StoreButtonProps = {
+  href?: string;
+};
+
+export function AppStoreButton({ href = "#" }: StoreButtonProps) {
   return (
     <a
-      href="#"
+      href={href}
       className="relative flex h-10 w-[120px] shrink-0 items-center gap-[8px] overflow-clip rounded-[6px] border border-[#a6a6a6] bg-black pl-[7px]"
     >
       <Image src="/icons/apple.svg" alt="" width={20} height={24} />
@@ -15,10 +19,10 @@ export function AppStoreButton() {
   );
 }
 
-export function GooglePlayButton() {
+export function GooglePlayButton({ href = "#" }: StoreButtonProps) {
   return (
     <a
-      href="#"
+      href={href}
       className="relative flex h-10 w-[120px] shrink-0 items-center gap-[7px] overflow-clip rounded-[6px] border border-[#a6a6a6] bg-black pl-[7px]"
     >
       <Image src="/icons/playstore.svg" alt="" width={21} height={24} />
