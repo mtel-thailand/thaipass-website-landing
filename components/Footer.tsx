@@ -26,10 +26,10 @@ export function Footer() {
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/mythaipass" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <Image src="/icons/facebook.svg" alt="" width={32} height={32} />
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/mythaipass_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Image src="/icons/instagram.svg" alt="" width={32} height={32} />
             </a>
           </div>
